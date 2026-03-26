@@ -3,7 +3,7 @@ import os
 
 def main():
     links = sys.argv[1:]
-    if len(links == 0):
+    if len(links) == 0:
         print('pass links to the script, like: yt-dlp "https://www.youtube.com/watch?v=TeSgUmh_7jc"')
     for link in links:
         cmd = "yt-dlp"
