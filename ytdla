@@ -1,0 +1,18 @@
+#!/bin/sh
+
+for id in $*; do yt-dlp \
+  --no-playlist \
+  --extract-audio \
+  --audio-format mp3 \
+  --embed-thumbnail \
+  --embed-metadata \
+  --embed-chapters \
+  --embed-info-json \
+  --format "251/140/bestaudio/mp3/91/best" \
+  --sponsorblock-remove all \
+  --age-limit 99 \
+  --write-info-json \
+  --concurrent-fragments 12 \
+  -o '%(channel,series,uploader,playlist_title,title)s - %(title)s.%(ext)s' \
+  "$id" 
+done
