@@ -2,6 +2,12 @@
 
 Opinionated script for downloading audio from youtube using yt-dlp under the hood
 
+# usage
+just pass youtube links to the script, like
+```
+ytdla "https://www.youtube.com/watch?v=TeSgUmh_7jc"
+```
+
 # installation
 You can easily install it using pip, pipx or any other python package manager:
 ```
@@ -11,3 +17,4 @@ or with uv:
 ```
 uv tool install -U git+https://github.com/lunardoesdev/ytdla@main
 ```
+
