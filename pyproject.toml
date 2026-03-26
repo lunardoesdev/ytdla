@@ -1,7 +1,7 @@
 [project]
 name = "ytdla"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Opinionated script for downloading audio from youtube using yt-dlp under the hood"
 authors = [
     {name = "Lunar", email = "lunarlifeburst@gmail.com"},
 ]
