@@ -7,3 +7,7 @@ You can easily install it using pip, pipx or any other python package manager:
 ```
 pip install -U git+https://github.com/lunardoesdev/ytdla@main
 ```
+or with uv:
+```
+uv tool install -U git+https://github.com/lunardoesdev/ytdla@main
+```
