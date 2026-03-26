@@ -1,6 +1,6 @@
 [project]
 name = "ytdla"
-version = "0.1.0"
+version = "0.1.1"
 description = "Opinionated script for downloading audio from youtube using yt-dlp under the hood"
 authors = [
     {name = "Lunar", email = "lunarlifeburst@gmail.com"},
