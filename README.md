@@ -2,6 +2,10 @@
 
 Opinionated script for downloading audio from youtube using yt-dlp under the hood
 
+# requrements
+you need to have Deno installed to solve js challenges of youtube.
+This is not an optional requirement.
+
 # usage
 just pass youtube links to the script, like
 ```
