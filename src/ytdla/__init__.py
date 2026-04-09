@@ -1,25 +1,39 @@
+
 import sys
-import os
+from yt_dlp import YoutubeDL
+
 
 def main():
     links = sys.argv[1:]
-    if len(links) == 0:
+    if not links:
         print('pass links to the script, like: ytdla "https://www.youtube.com/watch?v=TeSgUmh_7jc"')
-    for link in links:
-        cmd = "yt-dlp"
-        cmd += " --no-playlist"
-        cmd += " --extract-audio"
-        cmd += " --audio-format mp3"
-        cmd += " --embed-thumbnail"
-        cmd += " --embed-metadata"
-        cmd += " --embed-chapters"
-        cmd += " --embed-info-json"
-        cmd += " --format '251/140/bestaudio/mp3/91/best'"
-        cmd += " --sponsorblock-remove all"
-        cmd += " --age-limit 99"
-        cmd += " --write-info-json"
-        cmd += " --concurrent-fragments 12"
-        cmd += " -o '%(channel,series,uploader,playlist_title,title)s - %(title)s.%(ext)s'"
-        cmd += " '" + link + "'"
+        raise SystemExit(1)
 
-        os.system(cmd)
+    ydl_opts = {
+        "ignoreconfig": True,
+        "noplaylist": True,
+        "format": "251/140/bestaudio/mp3/91/best",
+        "outtmpl": "%(channel,series,uploader,playlist_title,title)s - %(title)s.%(ext)s",
+        "age_limit": 99,
+        "writethumbnail": True,
+        "writeinfojson": True,
+        "embedthumbnail": True,
+        "addmetadata": True,
+        "embedchapters": True,
+        "sponsorblock_remove": ["all"],
+        "concurrent_fragment_downloads": 12,
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+            },
+        ],
+    }
+
+    with YoutubeDL(ydl_opts) as ydl:
+        ydl.download(links)
+
+
+if __name__ == "__main__":
+    main()
+
