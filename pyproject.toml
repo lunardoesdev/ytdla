@@ -6,8 +6,7 @@ authors = [
     {name = "Lunar", email = "lunarlifeburst@gmail.com"},
 ]
 dependencies = [
-    "yt-dlp",
-    "yt-dlp-ejs"
+    "yt-dlp"
 ]
 requires-python = ">=3.12"
 readme = "README.md"
