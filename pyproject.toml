@@ -7,6 +7,7 @@ authors = [
 ]
 dependencies = [
     "yt-dlp"
+    "yt-dlp-ejs"
 ]
 requires-python = ">=3.12"
 readme = "README.md"
